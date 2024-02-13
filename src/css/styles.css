@@ -13,15 +13,49 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+  margin-left: 36px;
 }
 
-.gallery {
+.timer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 24px;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
+  
+  justify-content:flex-start;
+  align-items:flex-start;
+ 
+  margin-bottom: 24px;
+  padding-top:16px;
+  padding-bottom: 16px;
+}
+.datetime-picke{
+  width: 156px;
+  height: 36px;
+}
+.field{
+  width: 156px;
+  height: 108px;
+  gap:8px;
+  display: flex;
+  flex-direction: column;
+  background-color: F5F5F5;
+}
+.value{
+  gap: 8px; 
+  font-size: 40px;
+}
+.label{
+  font-size: 16px;
+}
+
+button{
+  /* background-color: 4E75FF; */
+  background-color: blue;
+  color: white;
+  /* color: FFFFFF; */
+  border-radius: 8px;
+  width: 75px;
+  height: 40px;
+}
+button:hover{
+  /* background-color: 6C8CFF; */
+  background-color: aqua;
 }
