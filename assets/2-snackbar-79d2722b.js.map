@@ -1,1 +1,0 @@
-{"version":3,"file":"2-snackbar-79d2722b.js","sources":["../../src/js/2-snackbar.js"],"sourcesContent":["import iziToast from \"izitoast\";\nimport \"izitoast/dist/css/iziToast.min.css\";\n\nconst form = document.querySelector('.form');\nconst button = document.querySelector('button');\n\n\n\n"],"names":[],"mappings":"6BAGa,SAAS,cAAc,OAAO,EAC5B,SAAS,cAAc,QAAQ"}
