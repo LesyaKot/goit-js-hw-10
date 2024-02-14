@@ -13,14 +13,12 @@ let userSelectedDate;
 let timerInterval;
 let timerStarted = false;
 
-
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-
     console.log(selectedDates[0]);
 
     userSelectedDate = selectedDates[0];
@@ -33,12 +31,10 @@ const options = {
         message: 'Please choose a date in the future',
       });
       startBtn.disabled = true;
-
-  }
-}
-}
-flatpickr(dateInput, options) 
- 
+    }
+  },
+};
+flatpickr(dateInput, options);
 
 startBtn.addEventListener('click', () => {
   if (!timerStarted) {
@@ -63,11 +59,12 @@ function updateTimer() {
   }
 
   const { days, hours, minutes, seconds } = convertMs(delta);
-  const formattedTime = `${addLeadingZero(days)}:${addLeadingZero(
-    hours
-  )}:${addLeadingZero(minutes)}:${addLeadingZero(seconds)}`;
 
-  timerDisplay.innerText = formattedTime;
+timerDisplay.querySelector('[data-days]').textContent = pad(days);
+timerDisplay.querySelector('[data-hours]').textContent = pad(hours);
+timerDisplay.querySelector('[data-minutes]').textContent = pad(minutes);
+timerDisplay.querySelector('[data-seconds]').textContent = pad(seconds);
+
 }
 
 function convertMs(ms) {
@@ -87,6 +84,6 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-function addLeadingZero(value) {
+function pad(value) {
   return String(value).padStart(2, '0');
 }
