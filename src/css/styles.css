@@ -5,9 +5,6 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
-
 
 
 body {
@@ -46,16 +43,19 @@ body {
   font-size: 16px;
 }
 
+input{
+  width: 272px;
+  height: 40px;
+  gap: 8px;
+}
 button{
-  /* background-color: 4E75FF; */
-  background-color: blue;
-  color: white;
-  /* color: FFFFFF; */
+  background-color: 4E75FF; 
+  color: FFFFFF;
   border-radius: 8px;
   width: 75px;
   height: 40px;
 }
 button:hover{
-  /* background-color: 6C8CFF; */
-  background-color: aqua;
+  background-color: 6C8CFF; 
+  
 }

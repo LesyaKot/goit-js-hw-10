@@ -33,3 +33,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+button{
+  background-color: 4E75FF; 
+   color: FFFFFF;
+  border-radius: 8px;
+  width: 75px;
+  height: 40px;
+}
+button:hover{
+  background-color: 6C8CFF; 
+  
+}
