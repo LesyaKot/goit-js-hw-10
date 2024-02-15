@@ -6,7 +6,6 @@
 */
 @import url('./reset.css');
 
-
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -15,47 +14,63 @@ body {
 
 .timer {
   display: flex;
-  
-  justify-content:flex-start;
-  align-items:flex-start;
- 
+
+  justify-content: flex-start;
+  align-items: flex-start;
+
   margin-bottom: 24px;
-  padding-top:16px;
+  padding-top: 16px;
   padding-bottom: 16px;
 }
-.datetime-picke{
+.datetime-picke {
   width: 156px;
   height: 36px;
 }
-.field{
+.field {
   width: 156px;
   height: 108px;
-  gap:8px;
+  gap: 8px;
   display: flex;
   flex-direction: column;
   background-color: F5F5F5;
 }
-.value{
-  gap: 8px; 
+.value {
+  gap: 8px;
   font-size: 40px;
 }
-.label{
+.label {
   font-size: 16px;
 }
 
-input{
-  width: 272px;
+input {
+  width: 360px;
   height: 40px;
   gap: 8px;
 }
-button{
-  background-color: 4E75FF; 
+button {
+  background-color: 4e75FF;
   color: FFFFFF;
   border-radius: 8px;
   width: 75px;
   height: 40px;
 }
-button:hover{
-  background-color: 6C8CFF; 
-  
+button:hover {
+  background-color: 6C8CFF;
+}
+fieldset {
+  width: 360px;
+  height: 64px;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+}
+.Snackbar-btn {
+  background-color: 4e75FF;
+  width: 360px;
+  height: 64px;
+}
+
+form {
+  width: 360px;
 }

@@ -6,7 +6,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 const timerDisplay = document.querySelector('.timer');
 const dateInput = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('button');
-
 startBtn.disabled = true;
 
 let userSelectedDate;
@@ -60,11 +59,10 @@ function updateTimer() {
 
   const { days, hours, minutes, seconds } = convertMs(delta);
 
-timerDisplay.querySelector('[data-days]').textContent = pad(days);
-timerDisplay.querySelector('[data-hours]').textContent = pad(hours);
-timerDisplay.querySelector('[data-minutes]').textContent = pad(minutes);
-timerDisplay.querySelector('[data-seconds]').textContent = pad(seconds);
-
+  timerDisplay.querySelector('[data-days]').textContent = pad(days);
+  timerDisplay.querySelector('[data-hours]').textContent = pad(hours);
+  timerDisplay.querySelector('[data-minutes]').textContent = pad(minutes);
+  timerDisplay.querySelector('[data-seconds]').textContent = pad(seconds);
 }
 
 function convertMs(ms) {
