@@ -6,7 +6,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 const timerDisplay = document.querySelector('.timer');
 const dateInput = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('button');
-startBtn.disabled = true;
 
 let userSelectedDate;
 let timerInterval;
