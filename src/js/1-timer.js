@@ -6,32 +6,33 @@ import 'izitoast/dist/css/iziToast.min.css';
 const timerDisplay = document.querySelector('.timer');
 const dateInput = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('button');
-
-let userSelectedDate;
+let userSelectedDate = new Date();
+startBtn.disabled = true;
 let timerInterval;
 let timerStarted = false;
 
 const options = {
   enableTime: true,
   time_24hr: true,
-  defaultDate: new Date(),
+  defaultDate: userSelectedDate,
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
-
-    userSelectedDate = selectedDates[0];
+    const selectedDate = selectedDates[0];
     let currentDate = new Date();
-    if (userSelectedDate >= currentDate) {
-      startBtn.disabled = false;
+
+    if (selectedDate >= currentDate) {
+      userSelectedDate = selectedDate;
+      updateStartButtonStatus();
     } else {
       iziToast.error({
-        title: 'alert',
+        title: 'Alert',
         message: 'Please choose a date in the future',
       });
       startBtn.disabled = true;
     }
   },
 };
+
 flatpickr(dateInput, options);
 
 startBtn.addEventListener('click', () => {
@@ -43,10 +44,14 @@ startBtn.addEventListener('click', () => {
   }
 });
 
+function updateStartButtonStatus() {
+  let currentDate = new Date();
+  startBtn.disabled = userSelectedDate < currentDate;
+}
+
 function updateTimer() {
   let currentTime = Date.now();
   let delta = userSelectedDate - currentTime;
-
   if (delta <= 0) {
     clearInterval(timerInterval);
     timerDisplay.innerText = '00:00:00:00';
@@ -57,11 +62,7 @@ function updateTimer() {
   }
 
   const { days, hours, minutes, seconds } = convertMs(delta);
-
-  timerDisplay.querySelector('[data-days]').textContent = pad(days);
-  timerDisplay.querySelector('[data-hours]').textContent = pad(hours);
-  timerDisplay.querySelector('[data-minutes]').textContent = pad(minutes);
-  timerDisplay.querySelector('[data-seconds]').textContent = pad(seconds);
+  displayTime(days, hours, minutes, seconds);
 }
 
 function convertMs(ms) {
@@ -77,8 +78,14 @@ function convertMs(ms) {
   const minutes = Math.floor(ms / minute);
   ms %= minute;
   const seconds = Math.floor(ms / second);
-
   return { days, hours, minutes, seconds };
+}
+
+function displayTime(days, hours, minutes, seconds) {
+  timerDisplay.querySelector('[data-days]').textContent = pad(days);
+  timerDisplay.querySelector('[data-hours]').textContent = pad(hours);
+  timerDisplay.querySelector('[data-minutes]').textContent = pad(minutes);
+  timerDisplay.querySelector('[data-seconds]').textContent = pad(seconds);
 }
 
 function pad(value) {

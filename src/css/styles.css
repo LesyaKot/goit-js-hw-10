@@ -19,7 +19,7 @@ body {
   padding-top: 16px;
   padding-bottom: 16px;
 }
-.datetime-picke {
+.datetime-picker {
   width: 156px;
   height: 36px;
 }
@@ -52,23 +52,9 @@ button {
   width: 75px;
   height: 40px;
 }
-button:hover {
+button:hover,
+button:focus {
   background-color: 6C8CFF;
 }
-fieldset {
-  width: 360px;
-  height: 64px;
-}
-.label {
-  display: flex;
-  flex-direction: column;
-}
-.Snackbar-btn {
-  background-color: 4e75FF;
-  width: 360px;
-  height: 64px;
-}
 
-form {
-  width: 360px;
-}
+
